@@ -1,6 +1,11 @@
 import { render } from "react-dom";
-
+import { Providers } from "./Providers";
 import App from "./App";
 
 const rootElement = document.getElementById("root");
-render(<App />, rootElement);
+render(
+  <Providers>
+    <App />
+  </Providers>,
+  rootElement
+);
