@@ -12,7 +12,7 @@ export const GamePage: React.FC = () => {
           key={card.id}
           activeColor={card.activeColor}
           state={card.state}
-          onClick={handleCardClick.bind(undefined, card.id)}
+          onClick={handleCardClick.bind(undefined, card)}
         />
       ))}
     </GameContainer>

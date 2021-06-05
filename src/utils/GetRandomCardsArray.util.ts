@@ -30,6 +30,9 @@ const cardsArray: Array<ICard> = Array.from({ length: 8 })
     ...card
   }));
 
-export const RandomSortedGameCards = cardsArray.sort(() =>
-  Math.random() > 0.5 ? 1 : -1
-);
+export const RandomSortedGameCards = () => {
+  const sortedArray = cardsArray
+    .slice()
+    .sort(() => (Math.random() > 0.5 ? 1 : -1));
+  return sortedArray;
+};

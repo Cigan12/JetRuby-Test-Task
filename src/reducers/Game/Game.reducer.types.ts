@@ -13,4 +13,8 @@ export interface ICard {
 
 export interface IGameState {
   cards: Array<ICard>;
+  finish: boolean;
+  currentAttempt: ICard | null;
+  readyForClick: boolean;
+  attemptsCount: number;
 }
