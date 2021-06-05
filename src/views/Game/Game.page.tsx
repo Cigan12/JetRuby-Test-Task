@@ -1,15 +1,19 @@
 import * as React from "react";
 import { GameContainer } from "./Game.styles";
 import { GameCardComponent } from "../../components/Cards/GameCard/GameCard.component";
-import { useSelector } from "react-redux";
-import { TStore } from "../../store";
+import { LGame } from "./Game.logic";
 
 export const GamePage: React.FC = () => {
-  const state = useSelector((state: TStore) => state.GameReducer);
+  const { handleCardClick, gameReducer } = LGame();
   return (
     <GameContainer>
-      {state.cards.map((card) => (
-        <GameCardComponent key={card.id} activeColor={card.activeColor} />
+      {gameReducer.cards.map((card) => (
+        <GameCardComponent
+          key={card.id}
+          activeColor={card.activeColor}
+          state={card.state}
+          onClick={handleCardClick.bind(undefined, card.id)}
+        />
       ))}
     </GameContainer>
   );
