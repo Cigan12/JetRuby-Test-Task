@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RandomSortedGameCards } from "../../utils/GetRandomCardsArray.util";
 import { IGameState, ECardState } from "./Game.reducer.types";
 
 const initialState: IGameState = {
-  cards: []
+  cards: RandomSortedGameCards
 };
 
 const GameSlice = createSlice({

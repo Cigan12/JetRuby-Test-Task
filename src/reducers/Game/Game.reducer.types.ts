@@ -7,7 +7,7 @@ export interface ICard {
   id: number;
   activeColor: string;
   state: ECardState;
-  bindId: number;
+  bindingId: number;
 }
 
 export interface IGameState {
